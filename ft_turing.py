@@ -33,6 +33,8 @@ for _ in range(MAX_STEPS):
     if pos not in tape:
         tape[pos] = machine["blank"]
     step = transitions[state].get(tape[pos])
+    if step is None:
+        break
     print(
         f"[{''.join(f'<{v}>' if k == pos else v for k,v in sorted(tape.items()))}]",
         f"({state}, {tape[pos]})",
