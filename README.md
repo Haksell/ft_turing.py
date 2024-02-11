@@ -199,3 +199,17 @@ p ft_turing.py 0ton1ton.json '0000011111'
 p ft_turing.py 0ton1ton.json '000000111111'
 p ft_turing.py 0ton1ton.json '00000001111111'
 ```
+
+```shell
+clear
+p ft_turing.py 0to2n.json ''
+p ft_turing.py 0to2n.json '0'
+p ft_turing.py 0to2n.json '00'
+p ft_turing.py 0to2n.json '000'
+p ft_turing.py 0to2n.json '0000'
+p ft_turing.py 0to2n.json '00000'
+p ft_turing.py 0to2n.json '000000'
+p ft_turing.py 0to2n.json '0000000'
+p ft_turing.py 0to2n.json '00000000'
+p ft_turing.py 0to2n.json '000000000'
+```
