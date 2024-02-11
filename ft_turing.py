@@ -42,5 +42,5 @@ for _ in range(MAX_STEPS):
         f"({step['to_state']}, {step['write']}, {step['action']})",
     )
     tape[pos] = step["write"]
-    pos += -1 if step["action"] == "LEFT" else +1
+    pos += -1 if step["action"] == "LEFT" else 1
     state = step["to_state"]
