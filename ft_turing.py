@@ -4,6 +4,10 @@ import sys
 MAX_STEPS = 10**3
 
 
+def stringify_tape(tape):
+    return f"[{''.join(f'<{v}>' if k == pos else v for k,v in sorted(tape.items()))}]"
+
+
 print("*" * 80)
 print("*" + " " * 78 + "*")
 print("*" + sys.argv[1][:-5].center(78) + "*")
@@ -29,14 +33,16 @@ tape = dict(enumerate(sys.argv[2]))
 print("*" * 80)
 for _ in range(MAX_STEPS):
     if state in machine["finals"]:
+        print(stringify_tape(tape), "Finale state:", state)
         break
     if pos not in tape:
         tape[pos] = machine["blank"]
     step = transitions[state].get(tape[pos])
     if step is None:
+        print(stringify_tape(tape), f"Unexpected transition: ({state}, {tape[pos]})")
         break
     print(
-        f"[{''.join(f'<{v}>' if k == pos else v for k,v in sorted(tape.items()))}]",
+        stringify_tape(tape),
         f"({state}, {tape[pos]})",
         "->",
         f"({step['to_state']}, {step['write']}, {step['action']})",
