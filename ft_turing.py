@@ -11,7 +11,10 @@ def dprint(*args, **kwargs):
 
 
 def stringify_tape(tape):
-    return f"[{''.join(f'<{v}>' if k == pos else v for k,v in sorted(tape.items()))}]"
+    cells = sorted(tape.items(), reverse=True)
+    while cells and cells[-1][1] == machine["blank"]:
+        cells.pop()
+    return f"[{''.join(f'<{v}>' if k == pos else v for k,v in reversed(cells))}]"
 
 
 dprint("*" * 80)
