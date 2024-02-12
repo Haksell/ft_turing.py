@@ -3,7 +3,7 @@ import json
 import sys
 
 DEBUG = False
-MAX_STEPS = 10**3
+MAX_STEPS = 500
 
 
 def dprint(*args, **kwargs):
@@ -17,7 +17,7 @@ def stringify_tape(tape, pos, blank):
         cells.popleft()
     while cells and cells[-1][1] == blank:
         cells.pop()
-    return f"[{''.join(f'<{v}>' if k == pos else v for k,v in cells)}]"
+    return f"[{''.join(f'<{v}>' if k == pos else v for k, v in cells)}]"
 
 
 def main():
