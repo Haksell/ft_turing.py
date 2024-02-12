@@ -1,6 +1,6 @@
 {
     "name": "loop",
-    "alphabet": [">", "<", "."],
+    "alphabet": [">", "<", "!", "."],
     "blank": ".",
     "states": ["loop", "HALT"],
     "initial": "loop",
@@ -9,7 +9,7 @@
         "loop": [
             { "read": ">", "to_state": "loop", "write": ">", "action": "RIGHT" },
             { "read": "<", "to_state": "loop", "write": "<", "action": "LEFT" },
-            { "read": ".", "to_state": "HALT", "write": ".", "action": "RIGHT" }
+            { "read": "!", "to_state": "HALT", "write": "!", "action": "RIGHT" }
         ]
     }
 }

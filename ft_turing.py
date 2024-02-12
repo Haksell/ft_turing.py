@@ -3,7 +3,7 @@ import json
 import sys
 
 DEBUG = False
-MAX_STEPS = 1000
+MAX_STEPS = 10**4
 
 
 def dprint(*args, **kwargs):
@@ -11,13 +11,17 @@ def dprint(*args, **kwargs):
         print(*args, **kwargs)
 
 
-def stringify_tape(tape, pos, blank):
+def stringify_tape(tape, pos, blank, *, return_start=False):
     cells = deque(sorted(tape.items()))
     while cells and cells[0][1] == blank:
         cells.popleft()
     while cells and cells[-1][1] == blank:
         cells.pop()
-    return f"[{''.join(f'<{v}>' if k == pos else v for k, v in cells)}]"
+    res = f"[{''.join(f'<{v}>' if k == pos else v for k, v in cells)}]"
+    if return_start:
+        return res, cells[0][0] if cells else None
+    else:
+        return res
 
 
 def main():
@@ -45,10 +49,17 @@ def main():
     state = machine["initial"]
     tape = dict(enumerate(sys.argv[2]))
     dprint("*" * 80)
+    seen = set()
     for _ in range(MAX_STEPS):
         if state in machine["finals"]:
             print(stringify_tape(tape, pos, blank), "Final state:", state)
             break
+        str_tape, start = stringify_tape(tape, pos, blank, return_start=True)
+        complete_state = (state, str_tape, pos - start if start else None)
+        if complete_state in seen:
+            print(stringify_tape(tape, pos, blank), "Infinite loop detected")
+            break
+        seen.add(complete_state)
         if pos not in tape:
             tape[pos] = machine["blank"]
         step = transitions[state].get(tape[pos])
