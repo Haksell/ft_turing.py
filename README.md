@@ -1,5 +1,34 @@
 ```shell
 clear
+p ft_turing.py machines/unary_add.json '+='
+p ft_turing.py machines/unary_add.json '+1='
+p ft_turing.py machines/unary_add.json '+11='
+p ft_turing.py machines/unary_add.json '+111='
+p ft_turing.py machines/unary_add.json '+1111='
+p ft_turing.py machines/unary_add.json '1+='
+p ft_turing.py machines/unary_add.json '1+1='
+p ft_turing.py machines/unary_add.json '1+11='
+p ft_turing.py machines/unary_add.json '1+111='
+p ft_turing.py machines/unary_add.json '1+1111='
+p ft_turing.py machines/unary_add.json '11+='
+p ft_turing.py machines/unary_add.json '11+1='
+p ft_turing.py machines/unary_add.json '11+11='
+p ft_turing.py machines/unary_add.json '11+111='
+p ft_turing.py machines/unary_add.json '11+1111='
+p ft_turing.py machines/unary_add.json '111+='
+p ft_turing.py machines/unary_add.json '111+1='
+p ft_turing.py machines/unary_add.json '111+11='
+p ft_turing.py machines/unary_add.json '111+111='
+p ft_turing.py machines/unary_add.json '111+1111='
+p ft_turing.py machines/unary_add.json '1111+='
+p ft_turing.py machines/unary_add.json '1111+1='
+p ft_turing.py machines/unary_add.json '1111+11='
+p ft_turing.py machines/unary_add.json '1111+111='
+p ft_turing.py machines/unary_add.json '1111+1111='
+```
+
+```shell
+clear
 p ft_turing.py machines/palindrome.json ''
 p ft_turing.py machines/palindrome.json '0'
 p ft_turing.py machines/palindrome.json '1'
@@ -241,13 +270,4 @@ p ft_turing.py machines/unary_mul.json '1111*1='
 p ft_turing.py machines/unary_mul.json '1111*11='
 p ft_turing.py machines/unary_mul.json '1111*111='
 p ft_turing.py machines/unary_mul.json '1111*1111='
-```
-
-```
-111*11=
-.11*11=11
-..1*11=1111
-...*11=111111
-
-111*11=111111
 ```
