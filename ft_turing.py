@@ -3,7 +3,7 @@ import json
 import sys
 
 DEBUG = False
-MAX_STEPS = 500
+MAX_STEPS = 1000
 
 
 def dprint(*args, **kwargs):
@@ -67,6 +67,11 @@ def main():
         tape[pos] = step["write"]
         pos += -1 if step["action"] == "LEFT" else 1
         state = step["to_state"]
+    else:
+        print(
+            stringify_tape(tape, pos, blank),
+            f"No final state found after {MAX_STEPS} steps",
+        )
 
 
 if __name__ == "__main__":

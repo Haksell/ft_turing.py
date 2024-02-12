@@ -1,0 +1,15 @@
+{
+    "name": "loop",
+    "alphabet": [">", "<", "."],
+    "blank": ".",
+    "states": ["loop", "HALT"],
+    "initial": "loop",
+    "finals": ["HALT"],
+    "transitions": {
+        "loop": [
+            { "read": ">", "to_state": "loop", "write": ">", "action": "RIGHT" },
+            { "read": "<", "to_state": "loop", "write": "<", "action": "LEFT" },
+            { "read": ".", "to_state": "HALT", "write": ".", "action": "RIGHT" }
+        ]
+    }
+}

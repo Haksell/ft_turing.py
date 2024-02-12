@@ -1,3 +1,5 @@
+## Push Machines
+
 ```shell
 clear
 p ft_turing.py machines/valid/0to2n.json ''
@@ -289,4 +291,17 @@ p ft_turing.py machines/valid/unary_mul.json '1111*1='
 p ft_turing.py machines/valid/unary_mul.json '1111*11='
 p ft_turing.py machines/valid/unary_mul.json '1111*111='
 p ft_turing.py machines/valid/unary_mul.json '1111*1111='
+```
+
+## Test Machines
+
+```shell
+clear
+echo "=== FINITE ==="
+p ft_turing.py machines/test/loop.json '!'
+p ft_turing.py machines/test/loop.json '>>>!'
+p ft_turing.py machines/test/loop.json '<!'
+echo "=== INFINITE ==="
+p ft_turing.py machines/test/loop.json '><!'
+p ft_turing.py machines/test/loop.json '>>>>><><><<!<><'
 ```
