@@ -58,7 +58,7 @@
             { "read": "1", "to_state": "clean", "write": "1", "action": "LEFT" },
             { "read": "*", "to_state": "clean", "write": "*", "action": "LEFT" },
             { "read": "=", "to_state": "clean", "write": "=", "action": "LEFT" },
-            { "read": ".", "to_state": "HALT", "write": ".", "action": "RIGHT" }
+            { "read": ".", "to_state": "HALT", "write": ".", "action": "LEFT" }
         ]
     }
 }
