@@ -61,7 +61,7 @@ def main():
             break
         seen.add(complete_state)
         if pos not in tape:
-            tape[pos] = machine["blank"]
+            tape[pos] = blank
         step = transitions[state].get(tape[pos])
         if step is None:
             print(
