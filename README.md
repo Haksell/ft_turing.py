@@ -299,11 +299,11 @@ p ft_turing.py machines/push/unary_mul.json '1111*1111='
 clear
 echo "=== FINITE ==="
 p ft_turing.py machines/test/arrows.json '!'
-p ft_turing.py machines/test/arrows.json '>>>!'
+p ft_turing.py machines/test/arrows.json 'rrr!'
 echo "=== BROKEN ==="
-p ft_turing.py machines/test/arrows.json '<!'
-p ft_turing.py machines/test/arrows.json '>>>'
+p ft_turing.py machines/test/arrows.json 'l!'
+p ft_turing.py machines/test/arrows.json 'rrr'
 echo "=== INFINITE ==="
-p ft_turing.py machines/test/arrows.json '><!'
-p ft_turing.py machines/test/arrows.json '>>>>><><><<!<><'
+p ft_turing.py machines/test/arrows.json 'rl!'
+p ft_turing.py machines/test/arrows.json 'rrrrrlrlrll!lrl'
 ```
